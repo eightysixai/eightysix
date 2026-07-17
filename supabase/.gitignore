@@ -1,0 +1,17 @@
+# Supabase
+.branches
+.temp
+
+# dotenvx
+.env.keys
+.env.local
+.env.*.local
+
+cat >> .gitignore <<'EOF'
+
+.env.local
+.env.migration
+supabase/.temp/
+dist/
+node_modules/
+EOF
