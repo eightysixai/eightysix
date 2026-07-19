@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 .env.migration
+
+# Windows/WSL download metadata artifact, not project content
+*:Zone.Identifier
