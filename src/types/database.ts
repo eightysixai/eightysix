@@ -12,6 +12,31 @@ export type Database = {
   __InternalSupabase: {
     PostgrestVersion: "14.5"
   }
+  graphql_public: {
+    Tables: {
+      [_ in never]: never
+    }
+    Views: {
+      [_ in never]: never
+    }
+    Functions: {
+      graphql: {
+        Args: {
+          extensions?: Json
+          operationName?: string
+          query?: string
+          variables?: Json
+        }
+        Returns: Json
+      }
+    }
+    Enums: {
+      [_ in never]: never
+    }
+    CompositeTypes: {
+      [_ in never]: never
+    }
+  }
   public: {
     Tables: {
       budget_targets: {
@@ -1093,6 +1118,7 @@ export type Database = {
         Row: {
           created_at: string
           invited_by: string | null
+          invited_email: string | null
           joined_at: string | null
           organization_id: string
           role: string
@@ -1103,6 +1129,7 @@ export type Database = {
         Insert: {
           created_at?: string
           invited_by?: string | null
+          invited_email?: string | null
           joined_at?: string | null
           organization_id: string
           role?: string
@@ -1113,6 +1140,7 @@ export type Database = {
         Update: {
           created_at?: string
           invited_by?: string | null
+          invited_email?: string | null
           joined_at?: string | null
           organization_id?: string
           role?: string
@@ -1141,6 +1169,7 @@ export type Database = {
           plan: string
           slug: string
           stripe_customer_id: string | null
+          stripe_subscription_id: string | null
           updated_at: string
         }
         Insert: {
@@ -1153,6 +1182,7 @@ export type Database = {
           plan?: string
           slug: string
           stripe_customer_id?: string | null
+          stripe_subscription_id?: string | null
           updated_at?: string
         }
         Update: {
@@ -1165,6 +1195,7 @@ export type Database = {
           plan?: string
           slug?: string
           stripe_customer_id?: string | null
+          stripe_subscription_id?: string | null
           updated_at?: string
         }
         Relationships: []
@@ -1704,6 +1735,9 @@ export type CompositeTypes<
     : never
 
 export const Constants = {
+  graphql_public: {
+    Enums: {},
+  },
   public: {
     Enums: {},
   },
